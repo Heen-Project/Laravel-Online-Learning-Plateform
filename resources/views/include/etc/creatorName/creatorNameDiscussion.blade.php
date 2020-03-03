@@ -1,0 +1,1 @@
+<span style="float:right;font-size:12px;vertical-align:middle;font-weight:normal;font-style:italic"><a href="{{ action('ActivityController@userActivityPage', $discussion->creator->id) }}"><span class="creator">{{ trans('dictionary.created') }} {{$discussion->created_at->diffForHumans()}} {{ trans('dictionary.by') }} </span>{{$discussion->creator->username}}</a></span>

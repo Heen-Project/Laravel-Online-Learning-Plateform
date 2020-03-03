@@ -1,0 +1,67 @@
+// Mixins
+// --------------------------
+@mixin transition ($property){
+-webkit-transition: $property;
+-moz-transition: $property;
+-ms-transition: $property;
+-o-transition: $property;
+transition: $property;
+}
+
+// Functions
+// --------------------------
+@function textColor($color){
+@if (lightness($color)>50){
+@return #000000;
+}
+@else{
+@return #CFCFC4;
+}
+}
+
+
+// Color Variabel
+// --------------------------
+$darkPastelBlue : #779ECB;
+
+// Variabel
+// --------------------------
+$navBackground : $darkPastelBlue;
+
+nav{
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li{
+			@include transition(all 0.3 ease-in-out);
+			float: left;
+			&:hover{
+				background-color: white;
+				color: $navBackground;
+			}
+			display: block;
+			width: 200px;
+			font-weight: bold;
+			color: #FFFFFF;
+			background-color: $navBackground;
+			text-align: center;
+			padding: 1%;
+			a{
+				text-decoration:none;
+				font-family: 'Lato';
+			}
+		}
+	}	
+}
+
+body {
+	margin: 0%;
+	padding: 0%;
+	width: 80%;
+	background-color: black;
+	color: #B0BEC5;
+	display: table;
+	font-weight: 100;
+	font-family: 'Lato';
+}
